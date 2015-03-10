@@ -1,10 +1,11 @@
 SOURCE=sorter.c
 OUT=sorter
+TESTIN=nums.txt
 
 all : run
 
 clean:
-	rm $(OUT)
+	rm -f $(OUT)
 
 compile: clean $(SOURCE)
 	gcc $(SOURCE) -o $(OUT)
@@ -12,4 +13,6 @@ compile: clean $(SOURCE)
 run: compile
 	./$(OUT)
 
+test: compile $(TESTIN)
+	cat $(TESTIN) | ./$(OUT)
 
