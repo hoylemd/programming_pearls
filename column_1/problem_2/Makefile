@@ -1,6 +1,6 @@
 SOURCE=sorter.c
 OUT=sorter
-TESTIN=nums.txt
+TESTIN=smallnums.txt
 
 all : run
 
