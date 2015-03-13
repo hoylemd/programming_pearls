@@ -1,11 +1,11 @@
-SOURCE=sorter.o printBytes.o
+SOURCE=sorter.o
 OUT=sorter
 TESTIN=nums.txt
 
 all : run
 
 clean:
-	rm -f $(OUT) *.o
+	rm -f $(OUT) *.o *.out
 
 printBytes.o: printBytes.c printBytes.h
 	gcc -c printBytes.c -o printBytes.o
