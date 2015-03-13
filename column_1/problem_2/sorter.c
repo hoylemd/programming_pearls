@@ -44,8 +44,6 @@ int main(void) {
     bitmap[0] = 0;
   }
 
-  printBitmap(bitmap, BITMAP_SIZE);
-
   // populate bitmap
   while(scanf("%d", &number) != EOF) {
     address = number / BYTE_SIZE;
@@ -56,25 +54,16 @@ int main(void) {
     }
     control = 1 << shifts;
 
-    map = byteToString(control);
-    printf("control: %s %i %i\n", map, shifts, number);
-    free(map);
-
     bitmap[address] = bitmap[address] | control;
   }
-
-  printBitmap(bitmap, BITMAP_SIZE);
 
   // sort
   for (i = 0; i < BITMAP_SIZE; i += 1) {
     address = i;
-    map = byteToString(bitmap[address]);
-    printf("address:%i, map:%s\n", address, map);
-    free(map);
     control = 1;
     for (j = 0; j < BYTE_SIZE; j += 1) {
       if (bitmap[address] & control) {
-        printf("%i\n", address * BYTE_SIZE + j);
+        printf("%i\n", address * BYTE_SIZE + j + 1);
       }
       control = control << 1;
     }

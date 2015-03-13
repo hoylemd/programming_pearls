@@ -13,6 +13,6 @@ compile: clean $(SOURCE)
 run: compile
 	./$(OUT)
 
-test: compile $(TESTIN)
-	cat $(TESTIN) | ./$(OUT)
+test: compile $(TESTIN) test.sh
+	./test.sh $(TESTIN)
 
