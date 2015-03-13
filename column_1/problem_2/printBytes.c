@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "printBytes.h"
 
 char * byteToString(unsigned char byte) {
