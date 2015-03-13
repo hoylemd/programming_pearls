@@ -25,6 +25,9 @@ compile: clean $(ALLBITS)
 run: compile
 	./$(OUT)
 
+$(TESTOUT):
+	cat "" > $(TESTOUT)
+
 test: compile $(TESTIN)
 	cat $(TESTIN) | ./$(OUT) | diff $(TESTOUT) -
 
